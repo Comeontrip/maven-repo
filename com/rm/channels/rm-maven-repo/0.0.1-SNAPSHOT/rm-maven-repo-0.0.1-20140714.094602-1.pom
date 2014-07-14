@@ -15,7 +15,7 @@
 		<repository>
 			<id>internal.repo</id>
 			<name>Temporary Staging Repository</name>
-			<url>file://${project.build.directory}/mvn-repo</url>
+			<url>file://${basedir}/mvn-repo</url>
 		</repository>
 	</distributionManagement>
 	<build>
@@ -27,7 +27,7 @@
 				<configuration>
 					<message>Maven artifacts for ${project.version}</message>  <!-- git commit message -->
 					<noJekyll>true</noJekyll>                                  <!-- disable webpage processing -->
-					<outputDirectory>${project.build.directory}/mvn-repo</outputDirectory> <!-- matches distribution management repository url above -->
+					<outputDirectory>${basedir}/mvn-repo</outputDirectory> <!-- matches distribution management repository url above -->
 					<branch>refs/heads/maven-repo</branch> remote branch name
 					<includes>
 						<include>**/*</include>

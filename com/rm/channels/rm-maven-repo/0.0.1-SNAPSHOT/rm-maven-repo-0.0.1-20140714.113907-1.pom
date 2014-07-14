@@ -10,7 +10,7 @@
 		<!-- github server corresponds to entry in ~/.m2/settings.xml -->
 		<github.global.server>github</github.global.server>
 	</properties>
-	
+
 	<distributionManagement>
 		<repository>
 			<id>internal.repo</id>
@@ -18,6 +18,17 @@
 			<url>file://${basedir}/mvn-repo</url>
 		</repository>
 	</distributionManagement>
+
+	<dependencies>
+		<dependency>
+			<groupId>com.rm.channels</groupId>
+			<artifactId>EWSJavaAPI</artifactId>
+			<version>1.2.1</version>
+			<scope>system</scope>
+			<systemPath>${basedir}/mvn-repo/com/rm/channels/EWSJavaAPI/1.2.1/EWSJavaAPI_1.2.1.jar</systemPath>
+		</dependency>
+	</dependencies>
+	
 	<build>
 		<plugins>
 			<plugin>
@@ -28,7 +39,8 @@
 					<message>Maven artifacts for ${project.version}</message>  <!-- git commit message -->
 					<noJekyll>true</noJekyll>                                  <!-- disable webpage processing -->
 					<outputDirectory>${basedir}/mvn-repo</outputDirectory> <!-- matches distribution management repository url above -->
-					<branch>refs/heads/maven-repo</branch> remote branch name
+					<branch>refs/heads/maven-repo</branch>
+					remote branch name
 					<includes>
 						<include>**/*</include>
 					</includes>
